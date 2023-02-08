@@ -1,9 +1,11 @@
+<%@ page import="java.sql.Connection" %>
+<%@ page import="com.joruri.conn.DBConnect" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Student List</title>
     <%@ include file="all_css.jsp"%>
 </head>
 <body class="bg-light">

@@ -1,9 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Add Student</title>
     <%@ include file="all_css.jsp"%>
 </head>
 <body class="bg-light">
@@ -14,7 +15,16 @@
             <div class="card shadow rounded">
                 <div class="card-body">
                     <p class="fs-3 text-center">Add Student</p>
-                    <form class="row g-3 needs-validation" novalidate method="post" action="">
+                    
+                    <c:if test="${not empty success}">
+                        <p class="text-center text-success">${success}</p>
+                        <c:remove var="success"/>
+                    </c:if>
+                    <c:if test="${not empty error}">
+                        <p class="text-center text-success">${error}</p>
+                        <c:remove var="error"/>
+                    </c:if>
+                    <form class="row g-3 needs-validation" novalidate method="post" action="register">
                         <div class="col-md-12">
                             <label for="validationCustom01" class="form-label">Full name</label>
                             <input type="text" class="form-control" id="validationCustom01" placeholder="full name" required name="fullname">

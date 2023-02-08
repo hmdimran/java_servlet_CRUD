@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Edit Student</title>
     <%@ include file="all_css.jsp"%>
 </head>
 <body class="bg-light">
