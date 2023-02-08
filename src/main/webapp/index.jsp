@@ -4,12 +4,43 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%@ include file="all_css.jsp"%>
 </head>
-<body>
+<body class="bg-light">
+<%@ include file="navbar.jsp"%>
 
+    <div class="container p-3 ">
+        <div class="card">
+            <div class="card-body">
+                <p class="text-center fs-1">All Student Details</p>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Qualification</th>
+                        <th scope="col">Date Of Birth</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Mark</td>
+                        <td>Mark</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>
+                            <a href="edit_student.jsp" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="#" class="btn btn-sm btn-danger ms-2">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
