@@ -1,5 +1,7 @@
-<%@ page import="java.sql.Connection" %>
+<%@ page import="com.joruri.dao.StudentDAO" %>
 <%@ page import="com.joruri.conn.DBConnect" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.joruri.entity.Student" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -27,17 +29,24 @@
                     </tr>
                     </thead>
                     <tbody>
+
+                    <%
+                        StudentDAO dao = new StudentDAO(DBConnect.getConn());
+                        List<Student> students = dao.getAllStudent();
+                        for(Student s : students){ %>
+
                     <tr>
-                        <td>Mark</td>
-                        <td>Mark</td>
-                        <td>Mark</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td><%= s.getFullname() %></td>
+                        <td><%= s.getEmail() %></td>
+                        <td><%= s.getQuality() %></td>
+                        <td><%= s.getDateofbirth() %></td>
+                        <td><%= s.getAddress() %></td>
                         <td>
-                            <a href="edit_student.jsp" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="edit_student.jsp?id=<%= s.getId() %>" class="btn btn-sm btn-primary">Edit</a>
                             <a href="#" class="btn btn-sm btn-danger ms-2">Delete</a>
                         </td>
                     </tr>
+                     <%   } %>
                     </tbody>
                 </table>
             </div>
