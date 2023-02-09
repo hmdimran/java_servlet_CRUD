@@ -59,7 +59,7 @@
                                 Address
                             </div>
                         </div>
-                        <input type="text" hidden value="<%= s.getId()%>" name="id">
+                        <input type="hidden" value="<%= s.getId()%>" name="id">
                         <div class="col-12">
                             <button class="btn btn-primary col-md-12" type="submit">Update</button>
                         </div>

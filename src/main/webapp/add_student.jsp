@@ -21,7 +21,7 @@
                         <c:remove var="success"/>
                     </c:if>
                     <c:if test="${not empty error}">
-                        <p class="text-center text-success">${error}</p>
+                        <p class="text-center text-danger">${error}</p>
                         <c:remove var="error"/>
                     </c:if>
                     <form class="row g-3 needs-validation" novalidate method="post" action="register">

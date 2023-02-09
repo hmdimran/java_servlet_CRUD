@@ -91,14 +91,14 @@ public class StudentDAO {
         boolean success = false;
 
         try {
-            String sql = "update users set fullname =? ,email=? ,quality=? ,dateofbirth=? ,address =? where id = ?";
+            String sql = "update users set fullname = ? ,email = ? ,quality = ? ,dateofbirth = ? ,address = ? where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,student.getFullname());
             ps.setString(2,student.getEmail());
             ps.setString(3,student.getQuality());
             ps.setString(4,student.getDateofbirth());
             ps.setString(5,student.getAddress());
-            ps.setInt(5,student.getId());
+            ps.setInt(6,student.getId());
 
             int i = ps.executeUpdate();
             if(i >0){
