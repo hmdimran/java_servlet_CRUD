@@ -17,11 +17,20 @@
         <div class="card">
             <div class="card-body">
                 <p class="text-center fs-1">All Student Details</p>
-                <c:if test="${not empty success}">
+                <c:if test="${not empty success || not empty deleteed}">
                     <p class="text-center text-success">${success}</p>
                     <c:remove var="success"/>
                 </c:if>
-                <c:if test="${not empty error}">
+                <c:if test="${not empty error }">
+                    <p class="text-center text-danger">${error}</p>
+                    <c:remove var="error"/>
+                </c:if>
+
+                <c:if test="${ not empty deleteed}">
+                    <p class="text-center text-success">${deleteed}</p>
+                    <c:remove var="deleteed"/>
+                </c:if>
+                <c:if test="${not empty error }">
                     <p class="text-center text-danger">${error}</p>
                     <c:remove var="error"/>
                 </c:if>
@@ -50,7 +59,7 @@
                         <td><%= s.getAddress() %></td>
                         <td>
                             <a href="edit_student.jsp?id=<%= s.getId() %>" class="btn btn-sm btn-primary">Edit</a>
-                            <a href="#" class="btn btn-sm btn-danger ms-2">Delete</a>
+                            <a href="delete?id=<%= s.getId() %>" class="btn btn-sm btn-danger">delete</a>
                         </td>
                     </tr>
                      <%   } %>

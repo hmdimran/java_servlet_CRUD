@@ -110,4 +110,22 @@ public class StudentDAO {
 
         return success;
     }
+    public boolean deleteStudentbyID(int id){
+        boolean success = false;
+
+        try {
+            String sql = "delete from users where id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
+
+            int i = ps.executeUpdate();
+            if(i >0){
+                success = true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return success;
+    }
 }
