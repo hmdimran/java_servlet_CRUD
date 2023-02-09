@@ -17,6 +17,14 @@
         <div class="card">
             <div class="card-body">
                 <p class="text-center fs-1">All Student Details</p>
+                <c:if test="${not empty success}">
+                    <p class="text-center text-success">${success}</p>
+                    <c:remove var="success"/>
+                </c:if>
+                <c:if test="${not empty error}">
+                    <p class="text-center text-success">${error}</p>
+                    <c:remove var="error"/>
+                </c:if>
                 <table class="table">
                     <thead>
                     <tr>
@@ -34,7 +42,6 @@
                         StudentDAO dao = new StudentDAO(DBConnect.getConn());
                         List<Student> students = dao.getAllStudent();
                         for(Student s : students){ %>
-
                     <tr>
                         <td><%= s.getFullname() %></td>
                         <td><%= s.getEmail() %></td>
